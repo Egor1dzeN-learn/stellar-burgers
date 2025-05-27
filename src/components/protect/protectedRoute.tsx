@@ -8,7 +8,7 @@ type ProtectedRouterProps = {
   isPublic?: boolean;
 };
 
-export function ProtRoute({ children, isPublic }: ProtectedRouterProps) {
+export function ProtectedRouter({ children, isPublic }: ProtectedRouterProps) {
   const location = useLocation();
   const user = useAppSelector(getName);
   const userCheck = useAppSelector(getCheckUser);
