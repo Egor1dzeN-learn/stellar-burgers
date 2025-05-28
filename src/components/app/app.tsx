@@ -17,12 +17,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { ProtectedRouter } from '@protect';
 import { useAppDispatch } from '@app-store';
-import {
-  FeedsThunk,
-  getUser,
-  IngredientsThunk,
-  setUserCheck
-} from '@slices';
+import { FeedsThunk, getUser, IngredientsThunk, setUserCheck } from '@slices';
 
 const App = () => {
   const navigate = useNavigate();
