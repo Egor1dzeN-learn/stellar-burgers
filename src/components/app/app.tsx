@@ -16,12 +16,12 @@ import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { ProtectedRouter } from '@protect';
-import { useAppDispatch } from '@app-store';
+import { useDispatch } from '@app-store';
 import { FeedsThunk, getUser, IngredientsThunk, setUserCheck } from '@slices';
 
 const App = () => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
   const location = useLocation();
   const backgroundLocation = location.state?.background;
 

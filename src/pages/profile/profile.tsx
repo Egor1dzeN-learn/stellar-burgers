@@ -1,12 +1,12 @@
 import { ProfileUI } from '@ui-pages';
 import { FC, SyntheticEvent, useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '@app-store';
+import { useDispatch, useSelector } from '@app-store';
 import { getEmail, getName, updateUser } from '../../services';
 export const Profile: FC = () => {
   /** TODO: взять переменную из стора */
-  const dispatc = useAppDispatch();
-  const userName = useAppSelector(getName);
-  const userEmail = useAppSelector(getEmail);
+  const dispatc = useDispatch();
+  const userName = useSelector(getName);
+  const userEmail = useSelector(getEmail);
   const user = {
     name: '',
     email: ''
