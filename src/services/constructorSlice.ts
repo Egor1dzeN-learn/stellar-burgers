@@ -54,6 +54,7 @@ export const constructorSlice = createSlice({
     },
     moveUp: (state, action: PayloadAction<number>) => {
       const index = action.payload;
+      if (index <= 0 || index >= state.constructor.ingredients.length) return;
       const temp = state.constructor.ingredients[index];
       state.constructor.ingredients[index] =
         state.constructor.ingredients[index - 1];
@@ -61,6 +62,8 @@ export const constructorSlice = createSlice({
     },
     moveDown: (state, action: PayloadAction<number>) => {
       const index = action.payload;
+      if (index < 0 || index >= state.constructor.ingredients.length - 1)
+        return;
       const temp = state.constructor.ingredients[index];
       state.constructor.ingredients[index] =
         state.constructor.ingredients[index + 1];
@@ -102,3 +105,4 @@ export const {
 } = constructorSlice.actions;
 export const { getConstructorIngredients, getStatusBuyBurger, getOrderData } =
   constructorSlice.selectors;
+export { initialState as initialStateConstructor };
