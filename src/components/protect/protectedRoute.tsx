@@ -1,5 +1,5 @@
 import { useAppSelector } from '@app-store';
-import { getCheckUser, getName } from '../../services';
+import { getCheckUser, getName } from '@slices';
 import { Preloader } from '@ui';
 import { Navigate, useLocation } from 'react-router-dom';
 

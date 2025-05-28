@@ -15,14 +15,14 @@ import styles from './app.module.css';
 import { AppHeader, IngredientDetails, Modal, OrderInfo } from '@components';
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
-import { ProtectedRouter } from '../protect';
+import { ProtectedRouter } from '@protect';
 import { useAppDispatch } from '@app-store';
 import {
   FeedsThunk,
   getUser,
   IngredientsThunk,
   setUserCheck
-} from '../../services';
+} from '@slices';
 
 const App = () => {
   const navigate = useNavigate();
