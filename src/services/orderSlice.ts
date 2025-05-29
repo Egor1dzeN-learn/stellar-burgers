@@ -1,4 +1,4 @@
-import { getOrdersApi, TOrdersResponse } from '@api';
+import { getOrdersApi } from '@api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TOrder } from '@utils-types';
 
@@ -43,3 +43,4 @@ export const ordersSlice = createSlice({
 });
 
 export const { isload, getUserOrders } = ordersSlice.selectors;
+export { initialState as initialStateOrder };

@@ -3,18 +3,17 @@ import { RegisterUI } from '@ui-pages';
 import { useDispatch } from '@app-store';
 import { register } from '@slices';
 export const Register: FC = () => {
-  const dispatch = useDispatch();
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const dis = useDispatch();
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     if (!userName || !email || !password) {
-      alert('Заполни все поля');
+      alert('Fill in all the fields');
       return;
     }
-    dispatch(register({ email, name: userName, password }));
+    dis(register({ email, name: userName, password }));
   };
 
   return (

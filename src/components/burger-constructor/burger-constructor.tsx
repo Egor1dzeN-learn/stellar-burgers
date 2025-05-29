@@ -6,10 +6,10 @@ import {
   clearConstructor,
   getConstructorIngredients,
   getName,
-  getOrderData, getStatusBuyBurger
+  getOrderData,
+  getStatusBuyBurger
 } from '@slices';
 import { useNavigate } from 'react-router-dom';
-import { navigate } from '@storybook/addon-links';
 import { useDispatch, useSelector } from '@app-store';
 
 export const BurgerConstructor: FC = () => {
@@ -17,11 +17,11 @@ export const BurgerConstructor: FC = () => {
   const dis = useDispatch();
   const navi = useNavigate();
   const orderRequest = useSelector(getStatusBuyBurger);
-
+  const name = useSelector(getName);
   const orderModalData = useSelector(getOrderData);
 
   const onOrderClick = () => {
-    if (!useSelector(getName)) {
+    if (!name) {
       navi('/login');
       return;
     }

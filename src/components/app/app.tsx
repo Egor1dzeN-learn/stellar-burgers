@@ -24,7 +24,19 @@ const App = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const backgroundLocation = location.state?.background;
-
+  console.log(
+    `
+  %c
+   _____                       _           _  ___   _   _ 
+  | ____|___ ___  _ __ ___  __| | ___   __| |/ _ \\ | \\ | |
+  |  _| / __/ _ \\| '__/ _ \\/ _\` |/ _ \\ / _\` | | | ||  \\| |
+  | |__| (_| (_) | | |  __/ (_| | (_) | (_| | |_| || |\\  |
+  |_____\\___\\___/|_|  \\___|\\__,_|\\___/ \\__,_|\\___/ |_| \\_|
+  
+  created by Egor1dzeN
+  `,
+    'color: #4b6cb7; font-family: monospace; font-size: 12px;'
+  );
   useEffect(() => {
     dispatch(IngredientsThunk());
     dispatch(FeedsThunk());

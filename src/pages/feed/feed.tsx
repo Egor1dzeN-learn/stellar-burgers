@@ -6,11 +6,10 @@ import { useDispatch, useSelector } from '@app-store';
 import { FeedsThunk, getOrders } from '@slices';
 
 export const Feed: FC = () => {
-  const dispatch = useDispatch();
   const orders: TOrder[] = useSelector(getOrders);
-
+  const dis = useDispatch();
   const updateFeeds = () => {
-    dispatch(FeedsThunk());
+    dis(FeedsThunk());
   };
   useEffect(() => {
     const number = setInterval(updateFeeds, 2000);

@@ -6,10 +6,10 @@ import { login } from '@slices';
 export const Login: FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
+  const dis = useDispatch();
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    dispatch(login({ email, password }));
+    dis(login({ email, password }));
   };
 
   return (
