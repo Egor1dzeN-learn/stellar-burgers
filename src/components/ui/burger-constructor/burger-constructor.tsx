@@ -22,7 +22,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
     {constructorItems.bun ? (
       <div
         className={`${styles.element} mb-4 mr-4`}
-        data-cy='constuctor-bun-up'
+        data-cy='constructor-bun-up'
       >
         <ConstructorElement
           type='top'
@@ -64,7 +64,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
     {constructorItems.bun ? (
       <div
         className={`${styles.element} mt-4 mr-4`}
-        data-cy='constuctor-bun-down'
+        data-cy='constructor-bun-down'
       >
         <ConstructorElement
           type='bottom'
@@ -72,6 +72,7 @@ export const BurgerConstructorUI: FC<BurgerConstructorUIProps> = ({
           text={`${constructorItems.bun.name} (низ)`}
           price={constructorItems.bun.price}
           thumbnail={constructorItems.bun.image}
+          data-cy='burger_constructor_down'
         />
       </div>
     ) : (

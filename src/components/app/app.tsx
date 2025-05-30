@@ -17,7 +17,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import { ProtectedRouter } from '@protect';
 import { useDispatch } from '@app-store';
-import { FeedsThunk, getUser, IngredientsThunk, setUserCheck } from '@slices';
+import { getUser, IngredientsThunk, setUserCheck } from '@slices';
 
 const App = () => {
   const navigate = useNavigate();
@@ -39,7 +39,6 @@ const App = () => {
   );
   useEffect(() => {
     dispatch(IngredientsThunk());
-    dispatch(FeedsThunk());
     dispatch(getUser())
       .unwrap()
       .catch(() => {})
@@ -51,7 +50,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <AppHeader />
-      <Routes>
+      <Routes location={backgroundLocation || location}>
         <Route path='/' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
         <Route path='*' element={<NotFound404 />} />

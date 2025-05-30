@@ -29,7 +29,7 @@ export const BurgerConstructor: FC = () => {
     dis(
       BuyBurgerThunk([
         constructorItems.bun._id,
-        ...constructorItems.ingredients.map((ingred) => ingred._id),
+        ...constructorItems.ingredients.map((ingredient) => ingredient._id),
         constructorItems.bun._id
       ])
     );
